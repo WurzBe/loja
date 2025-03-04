@@ -7,15 +7,15 @@
   
   body {
     font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
+    background: linear-gradient(to bottom right, #1e2a47, #3b4f44); /* Gradiente de fundo */
+    color: #fff; /* Cor do texto em branco */
     line-height: 1.6;
     padding: 20px;
   }
   
   /* Cabeçalho */
   header {
-    background-color: #007bff;
+    background-color: #28a745; /* Cor verde */
     color: #fff;
     padding: 20px 0;
     text-align: center;
@@ -88,7 +88,7 @@
   }
   
   .produto button {
-    background-color: #28a745;
+    background-color: #28a745; /* Cor verde */
     color: white;
     font-size: 1rem;
     padding: 10px;
@@ -99,7 +99,7 @@
   }
   
   .produto button:hover {
-    background-color: #218838;
+    background-color: #218838; /* Cor verde mais escura */
   }
   
   /* Botão Finalizar Compra */
@@ -157,30 +157,9 @@
       padding: 10px;
     }
   }
-  /* Estilo da notificação */
-.notification {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #28a745;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1rem;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-    z-index: 1000;
-  }
   
-  .notification.show {
-    opacity: 1;
-    visibility: visible;
-  }
-
-/* Estilo da notificação */
-.notification {
+  /* Estilo da notificação */
+  .notification {
     position: fixed;
     top: 20px;
     left: 50%;
@@ -205,8 +184,9 @@
   #emptyCartNotification {
     background-color: #dc3545; /* Cor vermelha para 'Carrinho vazio' */
   }
+  
   /* Estilos do carrinho */
-#cartSection {
+  #cartSection {
     background-color: #f8f9fa;
     padding: 20px;
     border: 1px solid #ccc;
@@ -240,7 +220,7 @@
   }
   
   /* Estilo do botão de carrinho */
-#viewCartBtn {
+  #viewCartBtn {
     position: fixed; /* Posiciona o botão fixo na tela */
     top: 20px; /* Distância do topo da tela */
     right: 20px; /* Distância da borda direita */
@@ -269,4 +249,3 @@
     transform: translateY(1px); /* Efeito de pressionar o botão */
   }
   
-    
