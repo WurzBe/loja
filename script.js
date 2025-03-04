@@ -22,6 +22,6 @@ function checkout() {
   // Envia a mensagem para o seu WhatsApp (substitua com seu número)
   const whatsappUrl = `https://wa.me/554788399170?text=${encodeURIComponent(message)}`;
   
-  // Redireciona para o WhatsApp
-  window.location.href = whatsappUrl;
+  // Abre a URL do WhatsApp em uma nova aba
+  window.open(whatsappUrl, '_blank');
 }
