@@ -5,11 +5,10 @@ function addToCart(productName, productPrice) {
   // Adiciona o produto ao carrinho
   cart.push({ name: productName, price: productPrice });
   
-}
+
   // Mostra o aviso de item adicionado
   showNotification();
-
-
+}
 function showNotification() {
   const notification = document.getElementById('notification');
   
