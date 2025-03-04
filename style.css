@@ -1,48 +1,160 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+/* Definições Gerais */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
   
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+  }
+  
+  /* Cabeçalho */
   header {
-    background-color: #333;
+    background-color: #007bff;
     color: #fff;
-    padding: 10px 0;
+    padding: 20px 0;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+  }
+  
+  /* Navegação */
+  header nav {
+    margin-top: 10px;
   }
   
   header nav a {
     color: #fff;
-    margin: 0 15px;
     text-decoration: none;
+    font-size: 1rem;
+    margin: 0 15px;
+    transition: color 0.3s;
   }
   
+  header nav a:hover {
+    color: #ffdd57;
+  }
+  
+  /* Seção de Produtos */
   .produtos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
   }
   
   .produto {
     background-color: #fff;
     border: 1px solid #ddd;
-    padding: 20px;
-    margin: 10px;
-    width: 200px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
+  }
+  
+  .produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
   }
   
   .produto img {
     width: 100%;
     height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .produto img:hover {
+    transform: scale(1.05);
+  }
+  
+  .produto h2 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+  }
+  
+  .produto p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .produto button {
+    background-color: #28a745;
+    color: white;
+    font-size: 1rem;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .produto button:hover {
+    background-color: #218838;
+  }
+  
+  /* Botão Finalizar Compra */
+  button {
+    background-color: #007bff;
+    color: white;
+    font-size: 1.2rem;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 30px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
   }
   
   footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
     text-align: center;
+    margin-top: 50px;
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .produtos {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+  
+    header h1 {
+      font-size: 2rem;
+    }
+  
+    button {
+      font-size: 1rem;
+      padding: 12px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .produtos {
+      grid-template-columns: 1fr;
+    }
+  
+    header h1 {
+      font-size: 1.5rem;
+    }
+  
+    button {
+      font-size: 1rem;
+      padding: 10px;
+    }
   }
   
