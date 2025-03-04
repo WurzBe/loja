@@ -17,9 +17,29 @@ function showNotification() {
   // Remove a classe 'show' após 3 segundos, para esconder o aviso
   setTimeout(() => {
     notification.classList.remove('show');
-  }, 1500);  // O aviso ficará visível por 3 segundos
+  }, 3000);  // O aviso ficará visível por 3 segundos
 }
 
+// Função para mostrar os itens no carrinho
+function viewCart() {
+  const cartSection = document.getElementById('cartSection');
+  const cartItemsList = document.getElementById('cartItemsList');
+  
+  // Limpa a lista de itens do carrinho
+  cartItemsList.innerHTML = '';
+
+  // Adiciona os itens do carrinho à lista
+  cart.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = `${item.name} - R$ ${item.price}`;
+    cartItemsList.appendChild(li);
+  });
+
+  // Exibe a seção do carrinho
+  cartSection.style.display = 'block';
+}
+
+// Função para finalizar a compra
 function checkout() {
   if (cart.length === 0) {
     // Mostra o aviso de carrinho vazio
@@ -43,6 +63,7 @@ function checkout() {
   link.click();  // Simula um clique no link
 }
 
+// Função para mostrar o aviso de carrinho vazio
 function showEmptyCartNotification() {
   const notification = document.getElementById('emptyCartNotification');
   
@@ -52,5 +73,10 @@ function showEmptyCartNotification() {
   // Remove a classe 'show' após 3 segundos, para esconder o aviso
   setTimeout(() => {
     notification.classList.remove('show');
-  }, 1500);  // O aviso ficará visível por 3 segundos
+  }, 3000);  // O aviso ficará visível por 3 segundos
 }
+
+// Exibir o carrinho quando o usuário clicar no link
+document.getElementById('viewCartBtn').addEventListener('click', function() {
+  viewCart();
+});

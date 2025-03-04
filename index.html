@@ -29,10 +29,23 @@
     <!-- Adicione mais produtos aqui -->
   </section>
 
+  <!-- Link para acessar o carrinho -->
+<a href="#" id="viewCartBtn">Ver Carrinho</a>
+
+<!-- Seção de Carrinho -->
+<div id="cartSection" style="display: none;">
+  <h2>Seu Carrinho</h2>
+  <ul id="cartItemsList">
+    <!-- Os itens serão listados aqui -->
+  </ul>
+  <button onclick="checkout()">Finalizar Compra</button>
+</div>
+
+
   <div id="emptyCartNotification" class="notification">
     <p>Seu carrinho está vazio!</p>
   </div>
-  
+
   <div id="notification" class="notification">
     <p>Item adicionado ao carrinho!</p>
   </div>

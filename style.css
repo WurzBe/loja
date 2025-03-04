@@ -205,4 +205,38 @@
   #emptyCartNotification {
     background-color: #dc3545; /* Cor vermelha para 'Carrinho vazio' */
   }
+  /* Estilos do carrinho */
+#cartSection {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  
+  #cartItemsList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #cartItemsList li {
+    margin: 10px 0;
+    font-size: 1rem;
+  }
+  
+  button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #218838;
+  }
+  
     
