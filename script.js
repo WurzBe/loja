@@ -23,5 +23,8 @@ function checkout() {
   const whatsappUrl = `https://wa.me/554788399170?text=${encodeURIComponent(message)}`;
   
   // Abre a URL do WhatsApp em uma nova aba
-  window.open(whatsappUrl, '_blank');
+  const link = document.createElement('a');
+  link.href = whatsappUrl;
+  link.target = '_blank';  // Força abrir em uma nova aba
+  link.click();  // Simula um clique no link
 }
