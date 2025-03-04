@@ -20,7 +20,7 @@ function checkout() {
   });
 
   // Envia a mensagem para o seu WhatsApp (substitua com seu número)
-  const whatsappUrl = `https://wa.me/5548992801691?text=${encodeURIComponent(message)}`;
+  const whatsappUrl = `https://wa.me/5547992801691?text=${encodeURIComponent(message)}`;
   
   // Redireciona para o WhatsApp
   window.location.href = whatsappUrl;
