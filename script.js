@@ -11,10 +11,7 @@ function addToCart(productName, productPrice) {
 function showNotification() {
   const notification = document.getElementById('notification');
   
-  // Adiciona a classe 'show' para mostrar a notificação
   notification.classList.add('show');
-
-  // Remove a classe 'show' após 3 segundos, para esconder o aviso
   setTimeout(() => {
     notification.classList.remove('show');
   }, 3000);  // O aviso ficará visível por 3 segundos
@@ -22,7 +19,6 @@ function showNotification() {
 }
 // Função para mostrar os itens no carrinho
 function viewCart() {
-  const cartSection = document.getElementById('cartSection');
   const cartItemsList = document.getElementById('cartItemsList');
   
   // Limpa a lista de itens do carrinho
@@ -42,18 +38,15 @@ function viewCart() {
 // Função para finalizar a compra
 function checkout() {
   if (cart.length === 0) {
-    // Mostra o aviso de carrinho vazio
     showEmptyCartNotification();
     return;
   }
 
-  // Monta a mensagem para o WhatsApp
   let message = "Itens no Carrinho:\n";
   cart.forEach((item) => {
     message += `${item.name} - R$ ${item.price}\n`;
   });
 
-  // Cria a URL para o WhatsApp com o número correto
   const whatsappUrl = `https://wa.me/5547988399170?text=${encodeURIComponent(message)}`;
   
   // Cria o link para o WhatsApp e abre em uma nova aba
@@ -67,10 +60,7 @@ function checkout() {
 function showEmptyCartNotification() {
   const notification = document.getElementById('emptyCartNotification');
   
-  // Adiciona a classe 'show' para mostrar a notificação de carrinho vazio
   notification.classList.add('show');
-
-  // Remove a classe 'show' após 3 segundos, para esconder o aviso
   setTimeout(() => {
     notification.classList.remove('show');
   }, 3000);  // O aviso ficará visível por 3 segundos
