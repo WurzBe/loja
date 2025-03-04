@@ -1,12 +1,15 @@
-let cart = [];
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 function addToCart(productName, productPrice) {
   // Adiciona o produto ao carrinho
   cart.push({ name: productName, price: productPrice });
 
-  // Mostra o aviso de item adicionado
-  showNotification();
+  // Salva o carrinho no localStorage
+  localStorage.setItem('cart', JSON.stringify(cart));
 
+  // Exibe o aviso de item adicionado
+  showNotification();
+}
 
 function showNotification() {
   const notification = document.getElementById('notification');
@@ -14,28 +17,28 @@ function showNotification() {
   notification.classList.add('show');
   setTimeout(() => {
     notification.classList.remove('show');
-  }, 3000);  // O aviso ficará visível por 3 segundos
+  }, 3000);
 }
-}
-// Função para mostrar os itens no carrinho
+
+// Função para exibir os itens do carrinho na página do carrinho
 function viewCart() {
   const cartItemsList = document.getElementById('cartItemsList');
-  
-  // Limpa a lista de itens do carrinho
-  cartItemsList.innerHTML = '';
+  cartItemsList.innerHTML = '';  // Limpa a lista de itens antes de adicionar os novos
 
-  // Adiciona os itens do carrinho à lista
-  cart.forEach(item => {
+  if (cart.length > 0) {
+    cart.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = `${item.name} - R$ ${item.price}`;
+      cartItemsList.appendChild(li);
+    });
+  } else {
     const li = document.createElement('li');
-    li.textContent = `${item.name} - R$ ${item.price}`;
+    li.textContent = "Carrinho vazio.";
     cartItemsList.appendChild(li);
-  });
-
-  // Exibe a seção do carrinho
-  cartSection.style.display = 'block';
+  }
 }
 
-// Função para finalizar a compra
+// Função para finalizar a compra (abrir WhatsApp)
 function checkout() {
   if (cart.length === 0) {
     showEmptyCartNotification();
@@ -48,12 +51,11 @@ function checkout() {
   });
 
   const whatsappUrl = `https://wa.me/5547988399170?text=${encodeURIComponent(message)}`;
-  
-  // Cria o link para o WhatsApp e abre em uma nova aba
+
   const link = document.createElement('a');
   link.href = whatsappUrl;
-  link.target = '_blank';  // Força abrir em uma nova aba
-  link.click();  // Simula um clique no link
+  link.target = '_blank';  // Para abrir em uma nova aba
+  link.click();  // Simula o clique no link
 }
 
 // Função para mostrar o aviso de carrinho vazio
@@ -63,10 +65,10 @@ function showEmptyCartNotification() {
   notification.classList.add('show');
   setTimeout(() => {
     notification.classList.remove('show');
-  }, 3000);  // O aviso ficará visível por 3 segundos
+  }, 3000);
 }
 
-// Exibir o carrinho quando o usuário clicar no link
-document.getElementById('viewCartBtn').addEventListener('click', function() {
+// Se estamos na página do carrinho (cart.html), exibe os itens do carrinho
+if (window.location.pathname.includes('cart.html')) {
   viewCart();
-});
+}
