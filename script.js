@@ -6,7 +6,7 @@ function addToCart(productName, productPrice) {
 
   // Mostra o aviso de item adicionado
   showNotification();
-}
+
 
 function showNotification() {
   const notification = document.getElementById('notification');
@@ -19,7 +19,7 @@ function showNotification() {
     notification.classList.remove('show');
   }, 3000);  // O aviso ficará visível por 3 segundos
 }
-
+}
 // Função para mostrar os itens no carrinho
 function viewCart() {
   const cartSection = document.getElementById('cartSection');
