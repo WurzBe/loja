@@ -8,6 +8,7 @@ function addToCart(productName, productPrice) {
 
   // Mostra o aviso de item adicionado
   showNotification();
+  
 }
 function showNotification() {
   const notification = document.getElementById('notification');
