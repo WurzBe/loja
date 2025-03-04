@@ -238,3 +238,21 @@
   #cartSection button:hover {
     background-color: #218838;
   }
+
+  /* Estilo do botão Voltar */
+  #cartSection .back-button {
+    background-color: #ffc107; /* Amarelo elegante */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  #cartSection .back-button:hover {
+    background-color: #e0a800; /* Amarelo mais escuro */
+    transform: scale(1.05); /* Leve aumento no botão */
+  }
