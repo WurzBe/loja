@@ -18,7 +18,7 @@ function showNotification() {
   // Remove a classe 'show' após 3 segundos, para esconder o aviso
   setTimeout(() => {
     notification.classList.remove('show');
-  }, 3000);  // O aviso ficará visível por 3 segundos
+  }, 2200);  // O aviso ficará visível por 3 segundos
 }
 function checkout() {
   if (cart.length === 0) {
