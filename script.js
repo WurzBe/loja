@@ -4,7 +4,7 @@ let cart = [];
 function addToCart(productName, productPrice) {
   // Adiciona o produto ao carrinho
   cart.push({ name: productName, price: productPrice });
-  alert(`${productName} foi adicionado ao seu carrinho!`);
+  
 }
 
 function checkout() {
