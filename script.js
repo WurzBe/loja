@@ -1,15 +1,27 @@
+
 let cart = [];
 
 function addToCart(productName, productPrice) {
-  const product = { name: productName, price: productPrice };
-  cart.push(product);
+  // Adiciona o produto ao carrinho
+  cart.push({ name: productName, price: productPrice });
   alert(`${productName} foi adicionado ao seu carrinho!`);
 }
 
-document.querySelectorAll('.produto button').forEach((button) => {
-  button.addEventListener('click', () => {
-    const productName = button.previousElementSibling.previousElementSibling.textContent;
-    const productPrice = button.previousElementSibling.textContent.replace('Preço: ', '');
-    addToCart(productName, productPrice);
+function checkout() {
+  if (cart.length === 0) {
+    alert("Seu carrinho está vazio!");
+    return;
+  }
+
+  // Monta a mensagem para o WhatsApp
+  let message = "Itens no Carrinho:\n";
+  cart.forEach((item) => {
+    message += `${item.name} - R$ ${item.price}\n`;
   });
-});
+
+  // Envia a mensagem para o seu WhatsApp (substitua com seu número)
+  const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(message)}`;
+  
+  // Redireciona para o WhatsApp
+  window.location.href = whatsappUrl;
+}
