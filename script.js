@@ -6,7 +6,21 @@ function addToCart(productName, productPrice) {
   cart.push({ name: productName, price: productPrice });
   
 }
+  // Mostra o aviso de item adicionado
+  showNotification();
 
+
+function showNotification() {
+  const notification = document.getElementById('notification');
+  
+  // Adiciona a classe 'show' para mostrar a notificação
+  notification.classList.add('show');
+
+  // Remove a classe 'show' após 3 segundos, para esconder o aviso
+  setTimeout(() => {
+    notification.classList.remove('show');
+  }, 3000);  // O aviso ficará visível por 3 segundos
+}
 function checkout() {
   if (cart.length === 0) {
     alert("Seu carrinho está vazio!");
