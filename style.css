@@ -30,7 +30,7 @@
   background: darkred;
 }
 
-/* O resto do seu código CSS */
+/* Estilos gerais */
 * {
   margin: 0;
   padding: 0;
@@ -43,7 +43,13 @@ body {
   color: #333; /* Cor de texto mais neutra */
   line-height: 1.6;
   padding: 20px;
-  min-height: 100vh;
+  min-height: auto; /* Garantir que o body tenha a altura mínima da tela */
+  display: flex;
+  flex-direction: column; /* Coloca o conteúdo em uma coluna */
+}
+/* Container principal do conteúdo */
+.main-content {
+  flex: 1; /* Permite que o conteúdo ocupe todo o espaço disponível */
 }
 
 /* Cabeçalho */
@@ -64,7 +70,7 @@ header h1 {
 
 footer {
   text-align: center;
-  margin-top: 50px;
+  margin-top: auto;
   font-size: 0.9rem;
   color: #777;
 }
