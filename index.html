@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Catálogo de Produtos</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
@@ -17,7 +18,7 @@
       <h2>Produto 1</h2>
       <p>Descrição do produto 1...</p>
       <p>Preço: R$ 919,99</p>
-      <button onclick="addToCart('Produto 1', 99.99)">Adicionar ao Carrinho</button>
+      <button onclick="addToCart('Produto 1', 919.99)">Adicionar ao Carrinho</button>
     </div>
     <div class="produto">
       <img src="produto2.jpg" alt="Produto 2">
@@ -26,29 +27,22 @@
       <p>Preço: R$ 150,00</p>
       <button onclick="addToCart('Produto 2', 150.00)">Adicionar ao Carrinho</button>
     </div>
-    <!-- Adicione mais produtos aqui -->
   </section>
 
-  <!-- Link para acessar o carrinho -->
-  <a href="cart.html" id="viewCartBtn">Ver Carrinho</a>
+  <!-- Botão para visualizar o carrinho -->
+  <button id="viewCartBtn" onclick="openCart()">
+    <i class="fas fa-shopping-cart"></i> Ver Carrinho
+  </button>
 
-  <!-- Outros elementos da página -->
-
-  <!-- Seção de Carrinho -->
-  <div id="cartSection" style="display: none;">
-    <h2>Seu Carrinho</h2>
-    <ul id="cartItemsList">
-      <!-- Os itens serão listados aqui -->
-    </ul>
-    <button onclick="checkout()">Finalizar Compra</button>
-  </div>
-
-  <div id="emptyCartNotification" class="notification">
-    <p>Seu carrinho está vazio!</p>
-  </div>
-
-  <div id="notification" class="notification">
-    <p>Item adicionado ao carrinho!</p>
+  <!-- Modal do Carrinho -->
+  <div id="cartModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeCart()">&times;</span>
+      <h2>Seu Carrinho</h2>
+      <ul id="cartItemsList"></ul>
+      <p id="cartTotal">Total: R$ 0,00</p>
+      <button onclick="checkout()">Finalizar Compra</button>
+    </div>
   </div>
 
   <footer>
