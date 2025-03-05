@@ -38,7 +38,8 @@ function viewCart() {
 
             // Criar texto do produto
             const span = document.createElement('span');
-            span.textContent = `${item.name} - R$ ${item.price.toFixed(2)}`;
+            span.textContent = `${item.name} 
+             R$ ${item.price.toFixed(2)}`;
 
             // Criar botão de remover
             const removeBtn = document.createElement('button');
