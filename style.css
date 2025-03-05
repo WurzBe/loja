@@ -256,3 +256,58 @@
     background-color: #e0a800; /* Amarelo mais escuro */
     transform: scale(1.05); /* Leve aumento no botão */
   }
+  <style>
+          body {
+              font-family: Arial, sans-serif;
+              background-color: #f8f8f8;
+              margin: 20px;
+              display: flex;
+              justify-content: center;
+          }
+  
+          .container {
+              display: flex;
+              gap: 20px;
+              flex-wrap: wrap;
+              max-width: 1200px;
+          }
+  
+          .card {
+              background: white;
+              border-radius: 10px;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+              padding: 15px;
+              width: 250px;
+              position: relative;
+              text-align: center;
+          }
+  
+          .card img {
+              width: 100%;
+              border-radius: 10px;
+          }
+  
+          .discount {
+              position: absolute;
+              top: 10px;
+              left: 10px;
+              background: red;
+              color: white;
+              padding: 5px 10px;
+              font-size: 14px;
+              border-radius: 5px;
+          }
+  
+          .price {
+              font-size: 18px;
+              font-weight: bold;
+              color: red;
+          }
+  
+          .old-price {
+              text-decoration: line-through;
+              color: gray;
+              font-size: 14px;
+              margin-left: 5px;
+          }
+      </style>
