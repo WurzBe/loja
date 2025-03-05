@@ -75,35 +75,7 @@ if (window.location.pathname.includes('cart.html')) {
 function clearCart() {
   localStorage.removeItem('cart'); // Remove os itens do localStorage
   document.getElementById('cartItemsList').innerHTML = ''; // Limpa a lista exibida
-  alert('Carrinho limpo com sucesso!'); // Alerta para o usuário
-}
-let carrinho = [];
-
-function adicionarAoCarrinho(nome, preco, imagem) {
-    carrinho.push({ nome, preco, imagem });
-    atualizarCarrinho();
 }
 
-function atualizarCarrinho() {
-    let listaCarrinho = document.getElementById("lista-carrinho");
-    listaCarrinho.innerHTML = "";
 
-    carrinho.forEach((item, index) => {
-        let li = document.createElement("li");
-        li.classList.add("item-carrinho");
-
-        li.innerHTML = `
-            <img src="${item.imagem}" alt="${item.nome}">
-            <span>${item.nome} - R$ ${item.preco.toFixed(2)}</span>
-            <button onclick="removerDoCarrinho(${index})">X</button>
-        `;
-
-        listaCarrinho.appendChild(li);
-    });
-}
-
-function removerDoCarrinho(index) {
-    carrinho.splice(index, 1);
-    atualizarCarrinho();
-}
 
