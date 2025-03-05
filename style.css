@@ -64,7 +64,7 @@ header h1 {
 
 footer {
   text-align: center;
-  margin-top: auto; /* Empurra o footer para o final da página */
+  margin-top: 50px;
   font-size: 0.9rem;
   color: #777;
 }
