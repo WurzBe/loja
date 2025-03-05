@@ -84,8 +84,8 @@ footer {
 }
 
 .produto {
-  width: 300px; /* Define um tamanho fixo para os blocos */
-  background-color: #fff;
+  width: 500px; /* Define um tamanho fixo para os blocos */
+  background-color: #aaf1dc;
   border: 1px solid #ddd;
   padding: 20px;
   border-radius: 12px;
@@ -116,6 +116,7 @@ footer {
 }
 
 .produto p {
+  text-align: center;
   font-size: 1.1rem;
   color: #666;
 }
