@@ -62,6 +62,13 @@ header h1 {
   font-weight: 500;
 }
 
+footer {
+  text-align: center;
+  margin-top: auto; /* Empurra o footer para o final da página */
+  font-size: 0.9rem;
+  color: #777;
+}
+
 /* Seção de Produtos */
 .produtos {
   display: flex;
