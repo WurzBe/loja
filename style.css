@@ -1,260 +1,291 @@
-/* Definições Gerais */
+/* Estilos para os itens do carrinho */
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f9f9f9;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+.cart-item-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.remove-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.remove-btn:hover {
+  background: darkred;
+}
+
+/* O resto do seu código CSS */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #e8f0f2, #f1f4f6); /* Gradiente suave */
-    color: #333; /* Cor de texto mais neutra */
-    line-height: 1.6;
-    padding: 20px;
-    min-height: 100vh;
-  }
-  
-  /* Cabeçalho */
-  header {
-    width: 100%; /* Ocupa toda a largura da tela */
-    text-align: center;
-    background-color: #1e1e1e;
-    color: #fff;
-    padding: 20px 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
-  }
-  
-  header h1 {
-    font-size: 2.8rem;
-    font-weight: 500;
-  }
-  
-  /* Seção de Produtos */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #e8f0f2, #f1f4f6); /* Gradiente suave */
+  color: #333; /* Cor de texto mais neutra */
+  line-height: 1.6;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* Cabeçalho */
+header {
+  width: 100%; /* Ocupa toda a largura da tela */
+  text-align: center;
+  background-color: #1e1e1e;
+  color: #fff;
+  padding: 20px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  font-weight: 500;
+}
+
+/* Seção de Produtos */
+.produtos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centraliza os itens */
+  gap: 20px;
+}
+
+.produto {
+  width: 300px; /* Define um tamanho fixo para os blocos */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.produto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.produto img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.produto img:hover {
+  transform: scale(1.05);
+}
+
+.produto h2 {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  color: #333;
+}
+
+.produto p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.produto button {
+  background-color: #28a745; /* Verde elegante */
+  color: white;
+  font-size: 1rem;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.produto button:hover {
+  background-color: #218838; /* Verde mais escuro */
+  transform: scale(1.05); /* Leve aumento no botão */
+}
+
+/* Botão Finalizar Compra */
+.checkout-button {
+  background-color: #007bff;
+  color: white;
+  font-size: 1.2rem;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 30px;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-button:hover {
+  background-color: #0056b3;
+}
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
   .produtos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Centraliza os itens */
-    gap: 20px;
-  }
-  
-  .produto {
-    width: 300px; /* Define um tamanho fixo para os blocos */
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .produto:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  .produto img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    transition: transform 0.3s ease;
-  }
-  
-  .produto img:hover {
-    transform: scale(1.05);
-  }
-  
-  .produto h2 {
-    font-size: 1.5rem;
-    margin: 20px 0;
-    color: #333;
-  }
-  
-  .produto p {
-    font-size: 1.1rem;
-    color: #666;
-  }
-  
-  .produto button {
-    background-color: #28a745; /* Verde elegante */
-    color: white;
-    font-size: 1rem;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .produto button:hover {
-    background-color: #218838; /* Verde mais escuro */
-    transform: scale(1.05); /* Leve aumento no botão */
-  }
-  
-  /* Botão Finalizar Compra */
-  .checkout-button {
-    background-color: #007bff;
-    color: white;
-    font-size: 1.2rem;
-    padding: 15px;
-    border: none;
-    border-radius: 8px;
-    margin-top: 30px;
-    width: 100%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .checkout-button:hover {
-    background-color: #0056b3;
-  }
-  
-  footer {
-    text-align: center;
-    margin-top: 50px;
-    font-size: 0.9rem;
-    color: #777;
-  }
-  
-  /* Responsividade */
-  @media (max-width: 768px) {
-    .produtos {
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    }
-  
-    header h1 {
-      font-size: 2.2rem;
-    }
-  
-    .checkout-button {
-      font-size: 1rem;
-      padding: 12px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .produtos {
-      grid-template-columns: 1fr;
-    }
-  
-    header h1 {
-      font-size: 1.8rem;
-    }
-  
-    .checkout-button {
-      font-size: 1rem;
-      padding: 10px;
-    }
-  }
-  
-  /* Estilo do botão de carrinho */
-  #viewCartBtn {
-    position: fixed; /* Posiciona o botão fixo na tela */
-    top: 20px; /* Distância do topo da tela */
-    right: 20px; /* Distância da borda direita */
-    background-color: #28a745; /* Verde elegante */
-    color: white; /* Cor do texto */
-    padding: 12px 20px; /* Espaçamento interno do botão */
-    border: none; /* Remove a borda */
-    border-radius: 8px; /* Bordas arredondadas */
-    font-size: 1rem; /* Tamanho da fonte */
-    font-weight: bold; /* Deixa a fonte mais negritada */
-    text-decoration: none; /* Remove sublinhado */
-    display: flex; /* Flexbox para alinhamento */
-    align-items: center; /* Alinha o conteúdo no centro */
-    justify-content: center; /* Alinha o conteúdo no centro */
-    cursor: pointer; /* Mostra o cursor de ponteiro */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves */
-  }
-  
-  #viewCartBtn:hover {
-    background-color: #218838; /* Verde mais escuro no hover */
-    transform: translateY(-3px); /* Efeito de "levitar" quando passar o mouse */
-  }
-  
-  #viewCartBtn:active {
-    transform: translateY(1px); /* Efeito de pressionar o botão */
-  }
-  
-  /* Estilo da notificação */
-  .notification {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #28a745; /* Verde para "Item adicionado" */
-    color: white;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-size: 1rem;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-    z-index: 1000;
-  }
-  
-  .notification.show {
-    opacity: 1;
-    visibility: visible;
-  }
-  
-  /* Novo estilo para o aviso de carrinho vazio */
-  #emptyCartNotification {
-    background-color: #dc3545; /* Vermelho para "Carrinho vazio" */
-  }
-  
-  /* Estilos do carrinho */
-  #cartSection {
-    background-color: #fff;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    max-width: 600px;
-    margin: 20px auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  #cartItemsList {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  #cartItemsList li {
-    margin: 10px 0;
-    font-size: 1.2rem;
-    color: #333;
-  }
-  
-  #cartSection button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    border-radius: 8px;
-  }
-  
-  #cartSection button:hover {
-    background-color: #218838;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   }
 
-  /* Estilo do botão Voltar */
-  #cartSection .back-button {
-    background-color: #ffc107; /* Amarelo elegante */
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    border-radius: 8px;
-    margin-top: 10px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+  header h1 {
+    font-size: 2.2rem;
   }
-  
-  #cartSection .back-button:hover {
-    background-color: #e0a800; /* Amarelo mais escuro */
-    transform: scale(1.05); /* Leve aumento no botão */
+
+  .checkout-button {
+    font-size: 1rem;
+    padding: 12px;
   }
- 
+}
+
+@media (max-width: 480px) {
+  .produtos {
+    grid-template-columns: 1fr;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .checkout-button {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
+
+/* Estilo do botão de carrinho */
+#viewCartBtn {
+  position: fixed; /* Posiciona o botão fixo na tela */
+  top: 20px; /* Distância do topo da tela */
+  right: 20px; /* Distância da borda direita */
+  background-color: #28a745; /* Verde elegante */
+  color: white; /* Cor do texto */
+  padding: 12px 20px; /* Espaçamento interno do botão */
+  border: none; /* Remove a borda */
+  border-radius: 8px; /* Bordas arredondadas */
+  font-size: 1rem; /* Tamanho da fonte */
+  font-weight: bold; /* Deixa a fonte mais negritada */
+  text-decoration: none; /* Remove sublinhado */
+  display: flex; /* Flexbox para alinhamento */
+  align-items: center; /* Alinha o conteúdo no centro */
+  justify-content: center; /* Alinha o conteúdo no centro */
+  cursor: pointer; /* Mostra o cursor de ponteiro */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves */
+}
+
+#viewCartBtn:hover {
+  background-color: #218838; /* Verde mais escuro no hover */
+  transform: translateY(-3px); /* Efeito de "levitar" quando passar o mouse */
+}
+
+#viewCartBtn:active {
+  transform: translateY(1px); /* Efeito de pressionar o botão */
+}
+
+/* Estilo da notificação */
+.notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #28a745; /* Verde para "Item adicionado" */
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  z-index: 1000;
+}
+
+.notification.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Novo estilo para o aviso de carrinho vazio */
+#emptyCartNotification {
+  background-color: #dc3545; /* Vermelho para "Carrinho vazio" */
+}
+
+/* Estilos do carrinho */
+#cartSection {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#cartItemsList {
+  list-style-type: none;
+  padding: 0;
+}
+
+#cartItemsList li {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+#cartSection button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+#cartSection button:hover {
+  background-color: #218838;
+}
+
+/* Estilo do botão Voltar */
+#cartSection .back-button {
+  background-color: #ffc107; /* Amarelo elegante */
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#cartSection .back-button:hover {
+  background-color: #e0a800; /* Amarelo mais escuro */
+  transform: scale(1.05); /* Leve aumento no botão */
+}
