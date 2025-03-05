@@ -256,7 +256,7 @@
     background-color: #e0a800; /* Amarelo mais escuro */
     transform: scale(1.05); /* Leve aumento no botão */
   }
-  <style>
+
           body {
               font-family: Arial, sans-serif;
               background-color: #f8f8f8;
@@ -310,5 +310,3 @@
               font-size: 14px;
               margin-left: 5px;
           }
-
- </style>
