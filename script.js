@@ -72,3 +72,8 @@ function showEmptyCartNotification() {
 if (window.location.pathname.includes('cart.html')) {
   viewCart();
 }
+function clearCart() {
+  localStorage.removeItem('cart'); // Remove os itens do localStorage
+  document.getElementById('cartItemsList').innerHTML = ''; // Limpa a lista exibida
+  alert('Carrinho limpo com sucesso!'); // Alerta para o usuário
+}
